@@ -1,0 +1,15 @@
+version: "2"
+services:
+    tts_service:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: tts_service_server_image
+        container_name: tts_service_server_container
+        restart: always
+        volumes:
+            - ./:/app
+        expose:
+            - 9999
+        ports:
+            - "19999:9999"
